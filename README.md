@@ -1,3 +1,10 @@
+# Theta Theta Telugu
+
+🌐 **Live Website:** https://thetathetateluguu.netlify.app/
+
+🚀 [Visit Website](https://thetathetateluguu.netlify.app/)
+
+---
 # Theta Theta Telugu — Official Restaurant Website
 
 The official website for **Theta Theta Telugu**, a premium Telugu cuisine restaurant.
