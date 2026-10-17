@@ -1,0 +1,415 @@
+/* ==========================================================================
+   THETA THETA TELUGU — GALLERY SECTION STYLESHEET
+   Aesthetic: 3D Orbit Coverflow / Warm Heritage Culinary Gallery
+   Palette: Background (#F7E9D7), Olive (#302719), Burgundy (#7A291B),
+            Terracotta (#A64B2A), Gold (#9A702D), Supporting Text (#75695C)
+   ========================================================================== */
+
+/* --- 1. Scoped Gallery Tokens --- */
+.gallery-section {
+  --gal-bg: #F7E9D7;
+  --gal-olive: #302719;
+  --gal-burgundy: #7A291B;
+  --gal-burgundy-hover: #5E1F14;
+  --gal-terracotta: #A64B2A;
+  --gal-gold: #9A702D;
+  --gal-text: #75695C;
+  --gal-border: #E5D7C5;
+  --gal-cream: #FFFDF9;
+  --gal-card-border: rgba(255, 253, 249, 0.85);
+  
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, sans-serif;
+
+  position: relative;
+  width: 100%;
+  background-color: var(--gal-bg);
+  padding: clamp(64px, 8vw, 110px) 24px clamp(80px, 9vw, 120px);
+  color: var(--gal-olive);
+  font-family: var(--font-sans);
+  overflow: hidden;
+  user-select: none;
+}
+
+/* Subtle background illumination texture */
+.gallery-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 1300px;
+  height: 480px;
+  background: radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.5) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* --- 2. Inner Container --- */
+.gallery-container {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* --- 3. Heading Group --- */
+.gallery-header-group {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: clamp(36px, 4.5vw, 56px);
+}
+
+.gallery-eyebrow {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--gal-burgundy);
+  margin-bottom: 12px;
+}
+
+.gallery-heading-divider {
+  margin-bottom: 18px;
+  display: flex;
+  justify-content: center;
+}
+
+.gallery-divider-svg {
+  width: 110px;
+  height: auto;
+  display: block;
+}
+
+.gallery-main-heading {
+  font-family: var(--font-serif);
+  font-size: clamp(2.4rem, 4.4vw, 3.8rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  margin: 0 0 16px 0;
+  text-align: center;
+}
+
+.heading-olive {
+  color: var(--gal-olive);
+}
+
+.heading-burgundy {
+  color: var(--gal-burgundy);
+  font-style: italic;
+}
+
+.gallery-intro-desc {
+  font-family: var(--font-sans);
+  font-size: clamp(0.95rem, 1.2vw, 1.08rem);
+  line-height: 1.65;
+  color: var(--gal-text);
+  max-width: 620px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* --- 4. 3D Coverflow Stage --- */
+.gallery-coverflow-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 1100px;
+  height: clamp(360px, 44vw, 500px);
+  margin: 0 auto;
+  perspective: 1200px;
+  perspective-origin: 50% 50%;
+  touch-action: pan-y pinch-zoom;
+}
+
+.gallery-coverflow-stage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+}
+
+/* Individual Gallery Card */
+.gallery-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: clamp(300px, 46vw, 540px);
+  aspect-ratio: 16 / 10.2;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 16px 36px -10px rgba(48, 39, 25, 0.22),
+              0 6px 14px -4px rgba(48, 39, 25, 0.12);
+  border: 2px solid var(--gal-card-border);
+  background-color: #2D2319;
+  cursor: pointer;
+  transition: transform 700ms cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 700ms cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 500ms ease;
+  will-change: transform, opacity;
+  outline: none;
+}
+
+.gallery-card:focus-visible {
+  outline: 3px solid var(--gal-burgundy);
+  outline-offset: 4px;
+}
+
+/* Card Image */
+.gallery-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* Gradient Overlay for Caption Readability */
+.gallery-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(24, 16, 10, 0.9) 0%,
+    rgba(24, 16, 10, 0.5) 40%,
+    rgba(24, 16, 10, 0.05) 75%,
+    transparent 100%
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: clamp(16px, 2.5vw, 24px);
+  transition: opacity 0.3s ease;
+}
+
+/* Category Pill Badge */
+.gallery-card-badge {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #FFFDF9;
+  background-color: var(--gal-burgundy);
+  padding: 4px 12px;
+  border-radius: 9999px;
+  margin-bottom: 8px;
+  align-self: flex-start;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+}
+
+/* Card Title */
+.gallery-card-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.1rem, 1.8vw, 1.45rem);
+  font-weight: 700;
+  line-height: 1.25;
+  color: #FFFDF9;
+  letter-spacing: -0.01em;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* 3D Transform States Calculated dynamically via inline style,
+   plus base classes for smooth styling */
+.gallery-card.is-active {
+  cursor: default;
+  box-shadow: 0 24px 52px -10px rgba(48, 39, 25, 0.38),
+              0 8px 24px -6px rgba(122, 41, 27, 0.25);
+  border-color: rgba(255, 253, 249, 0.95);
+}
+
+/* --- 5. Navigation Controls (Arrows & Indicators) --- */
+.gallery-controls-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  margin-top: clamp(28px, 3.5vw, 42px);
+}
+
+/* Circular Arrow Buttons */
+.gallery-nav-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: var(--gal-burgundy);
+  color: var(--gal-cream);
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(122, 41, 27, 0.25);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.25s ease,
+              box-shadow 0.25s ease;
+  outline: none;
+}
+
+.gallery-nav-btn:hover {
+  background-color: var(--gal-burgundy-hover);
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(122, 41, 27, 0.35);
+}
+
+.gallery-nav-btn:active {
+  transform: translateY(0) scale(0.96);
+  transition-duration: 150ms;
+}
+
+.gallery-nav-btn:focus-visible {
+  outline: 2px solid var(--gal-burgundy);
+  outline-offset: 3px;
+}
+
+.gallery-nav-btn svg {
+  width: 20px;
+  height: 20px;
+  stroke: currentColor;
+  stroke-width: 2.2;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Slide Indicators */
+.gallery-indicators {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.gallery-indicator-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 9999px;
+  background-color: #D8C7B2;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  outline: none;
+}
+
+.gallery-indicator-dot:hover:not(.active) {
+  background-color: #BAA68F;
+  transform: scale(1.2);
+}
+
+.gallery-indicator-dot.active {
+  width: 32px;
+  background-color: var(--gal-burgundy);
+  box-shadow: 0 2px 8px rgba(122, 41, 27, 0.3);
+}
+
+.gallery-indicator-dot:focus-visible {
+  outline: 2px solid var(--gal-burgundy);
+  outline-offset: 2px;
+}
+
+/* --- 6. Reduced Motion --- */
+@media (prefers-reduced-motion: reduce) {
+  .gallery-card,
+  .gallery-nav-btn,
+  .gallery-indicator-dot {
+    transition: none !important;
+  }
+}
+
+/* --- 7. Responsive Breakpoints --- */
+
+/* Tablet (1024px and below) */
+@media (max-width: 1024px) {
+  .gallery-coverflow-wrap {
+    height: 400px;
+  }
+
+  .gallery-card {
+    width: clamp(280px, 58vw, 440px);
+  }
+}
+
+/* Mobile landscape / small tablet (768px and below) */
+@media (max-width: 768px) {
+  .gallery-section {
+    padding: 56px 16px 72px;
+  }
+
+  .gallery-main-heading {
+    font-size: 2.1rem;
+  }
+
+  .gallery-coverflow-wrap {
+    height: 330px;
+    perspective: 800px;
+  }
+
+  .gallery-card {
+    width: 82vw;
+    border-radius: 16px;
+  }
+
+  .gallery-card-badge {
+    font-size: 0.65rem;
+    padding: 3px 10px;
+  }
+
+  .gallery-card-title {
+    font-size: 1.08rem;
+  }
+
+  .gallery-controls-row {
+    gap: 16px;
+    margin-top: 24px;
+  }
+
+  .gallery-nav-btn {
+    width: 38px;
+    height: 38px;
+  }
+
+  .gallery-nav-btn svg {
+    width: 17px;
+    height: 17px;
+  }
+}
+
+/* Small mobile (480px and below) */
+@media (max-width: 480px) {
+  .gallery-coverflow-wrap {
+    height: 290px;
+    perspective: 600px;
+  }
+
+  .gallery-card {
+    width: 88vw;
+    border-radius: 14px;
+  }
+
+  .gallery-card-overlay {
+    padding: 14px;
+  }
+
+  .gallery-card-title {
+    font-size: 0.98rem;
+  }
+}
+
+/* --- 8. Accessibility: Prefers Reduced Motion --- */
+@media (prefers-reduced-motion: reduce) {
+  .gallery-card,
+  .gallery-card-overlay,
+  .gallery-nav-btn,
+  .gallery-indicator-dot {
+    transition: none !important;
+  }
+}
+

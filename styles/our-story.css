@@ -1,0 +1,422 @@
+/* ==========================================================================
+   THETA THETA TELUGU — OUR STORY SECTION STYLESHEET
+   Aesthetic: Illustrated Paper-Board Timeline / Warm Heritage Parchment
+   Palette: Background (#F5EBDD), Ink (#302719), Burgundy (#7A291B),
+            Gold (#9A702D), Terracotta (#A64B2A), Text (#75695C)
+   ========================================================================== */
+
+/* --- 1. Scoped Story Section Tokens --- */
+.our-story-section {
+  --story-bg: #F5EBDD;
+  --story-ink: #302719;
+  --story-burgundy: #7A291B;
+  --story-gold: #9A702D;
+  --story-terracotta: #A64B2A;
+  --story-text: #75695C;
+  --story-border: #E5D7C5;
+  --story-paper-line: rgba(184, 155, 114, 0.12);
+  --story-card-bg: #FAF5EE;
+  --story-panel-bg: #FFFDF9;
+  
+  --font-serif: Georgia, 'Playfair Display', 'Cinzel', serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, sans-serif;
+
+  position: relative;
+  width: 100%;
+  background-color: var(--story-bg);
+  /* Ruled paper texture: subtle horizontal notebook lines */
+  background-image: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 27px,
+    var(--story-paper-line) 28px
+  );
+  padding: clamp(72px, 8.5vw, 120px) 24px clamp(80px, 9vw, 130px);
+  color: var(--story-ink);
+  font-family: var(--font-sans);
+  overflow: hidden;
+}
+
+/* Subtle top edge border separating from Menu Section */
+.our-story-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 5%;
+  right: 5%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--story-border), transparent);
+}
+
+/* --- 2. Inner Container --- */
+.story-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1040px;
+  margin: 0 auto;
+}
+
+/* --- 3. Heading Group --- */
+.story-header-group {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: clamp(48px, 6vw, 72px);
+}
+
+.story-eyebrow {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--story-burgundy);
+  margin-bottom: 14px;
+}
+
+.story-heading-divider {
+  margin-bottom: 18px;
+  display: flex;
+  justify-content: center;
+}
+
+.story-divider-svg {
+  width: 110px;
+  height: auto;
+  display: block;
+}
+
+.story-main-heading {
+  font-family: var(--font-serif);
+  font-size: clamp(2.4rem, 4.4vw, 3.8rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  margin: 0 0 16px 0;
+  text-align: center;
+}
+
+.story-heading-line1 {
+  color: var(--story-ink);
+  display: block;
+}
+
+.story-heading-line2 {
+  color: var(--story-burgundy);
+  display: block;
+  font-style: italic;
+}
+
+.story-intro-desc {
+  font-family: var(--font-sans);
+  font-size: clamp(0.95rem, 1.2vw, 1.08rem);
+  line-height: 1.65;
+  color: var(--story-text);
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* --- 4. Process Board & Timeline Canvas --- */
+.story-board-canvas {
+  position: relative;
+  width: 100%;
+  max-width: 920px;
+  height: 1220px;
+  margin: 0 auto;
+}
+
+/* Animated Winding SVG Route */
+.story-timeline-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.story-route-path {
+  fill: none;
+  stroke: #BFA47E;
+  stroke-width: 2.5;
+  stroke-dasharray: 10 10;
+  stroke-linecap: round;
+  animation: marchingDashes 4s linear infinite;
+  opacity: 0.85;
+}
+
+@keyframes marchingDashes {
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: -40;
+  }
+}
+
+/* --- 5. Story Cards (ProcessCard) --- */
+.story-card-wrapper {
+  position: absolute;
+  width: clamp(290px, 34vw, 330px);
+  z-index: 2;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Specific Milestone Coordinates on Desktop */
+.card-pos-0 { top: 40px;  left: 30px; }
+.card-pos-1 { top: 260px; right: 30px; }
+.card-pos-2 { top: 490px; left: 30px; }
+.card-pos-3 { top: 720px; right: 30px; }
+.card-pos-4 { top: 950px; left: 30px; }
+
+/* The Pin at Card Top */
+.card-pin {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%) translateY(8px);
+  width: 24px;
+  height: 24px;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.story-card-wrapper.is-revealed .card-pin {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.pin-head {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  box-shadow: 0 3px 6px rgba(48, 39, 25, 0.28), inset 0 1px 2px rgba(255, 255, 255, 0.6);
+  border: 2px solid #FFFDF9;
+}
+
+/* Card Body with Smooth Fade-Up Viewport Entrance */
+.story-card {
+  position: relative;
+  background-color: var(--story-card-bg);
+  border: 1px solid var(--story-border);
+  border-radius: 20px;
+  padding: 10px;
+  box-shadow: 0 12px 28px -6px rgba(48, 39, 25, 0.12),
+              0 4px 10px -2px rgba(48, 39, 25, 0.06);
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+.story-card-wrapper.is-revealed .story-card {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Restrained Desktop Hover Elevation */
+@media (hover: hover) and (pointer: fine) {
+  .story-card-wrapper.is-revealed:hover .story-card {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px -8px rgba(48, 39, 25, 0.2);
+  }
+}
+
+/* Inner Lighter Panel */
+.story-panel {
+  background-color: var(--story-panel-bg);
+  border-radius: 14px;
+  padding: 22px 20px 24px;
+  border: 1px solid rgba(229, 215, 197, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+/* Milestone Badge (01, 02...) */
+.milestone-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  margin-bottom: 14px;
+}
+
+/* Card Headline */
+.story-card-title {
+  font-family: var(--font-serif);
+  font-size: 1.22rem;
+  font-weight: 700;
+  line-height: 1.32;
+  color: var(--story-ink);
+  margin-bottom: 10px;
+  letter-spacing: -0.01em;
+}
+
+/* Card Description */
+.story-card-desc {
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: var(--story-text);
+  margin: 0;
+}
+
+/* --- 6. Accent Themes --- */
+/* Burgundy */
+.accent-burgundy .pin-head { background-color: #7A291B; }
+.accent-burgundy .milestone-badge { background-color: #F4E3DF; color: #7A291B; }
+
+/* Gold */
+.accent-gold .pin-head { background-color: #9A702D; }
+.accent-gold .milestone-badge { background-color: #F8EEDF; color: #9A702D; }
+
+/* Terracotta */
+.accent-terracotta .pin-head { background-color: #A64B2A; }
+.accent-terracotta .milestone-badge { background-color: #F9E8E1; color: #A64B2A; }
+
+/* --- 7. Closing Quotation --- */
+.story-closing-quote {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  margin-top: 56px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.quote-ornament {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  max-width: 440px;
+}
+
+.quote-rule {
+  flex: 1;
+  height: 1px;
+  background-color: var(--story-border);
+}
+
+.quote-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--story-burgundy);
+}
+
+.quote-text {
+  font-family: var(--font-serif);
+  font-size: clamp(1.4rem, 2.4vw, 1.9rem);
+  font-weight: 600;
+  font-style: italic;
+  color: var(--story-burgundy);
+  letter-spacing: -0.01em;
+  margin: 0;
+  max-width: 620px;
+}
+
+/* --- 8. Reduced Motion --- */
+@media (prefers-reduced-motion: reduce) {
+  .story-route-path {
+    animation: none !important;
+  }
+  .story-card-wrapper,
+  .story-card,
+  .card-pin {
+    transition: none !important;
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* --- 9. Responsive Breakpoints --- */
+
+/* Tablet (860px and below) */
+@media (max-width: 860px) {
+  .story-board-canvas {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    align-items: center;
+    padding-top: 10px;
+  }
+
+  .story-timeline-svg {
+    display: none;
+  }
+
+  .story-card-wrapper {
+    position: relative;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    width: 100%;
+    max-width: 460px;
+    transform: none !important;
+  }
+
+  .story-closing-quote {
+    margin-top: 48px;
+  }
+}
+
+/* Mobile (480px and below) */
+@media (max-width: 480px) {
+  .our-story-section {
+    padding: 56px 16px 72px;
+  }
+
+  .story-main-heading {
+    font-size: 2.1rem;
+  }
+
+  .story-board-canvas {
+    gap: 24px;
+  }
+
+  .story-card {
+    padding: 8px;
+    border-radius: 16px;
+  }
+
+  .story-panel {
+    padding: 18px 16px 20px;
+  }
+
+  .story-card-title {
+    font-size: 1.1rem;
+  }
+
+  .story-card-desc {
+    font-size: 0.84rem;
+  }
+
+  .quote-text {
+    font-size: 1.25rem;
+  }
+}

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 240" fill="none">
+  <!-- Muted botanical branch with leaves -->
+  <path d="M45 235c-5-40 5-85 15-130 5-25 2-55-12-85" stroke="#B8A793" stroke-width="1.2" stroke-linecap="round" stroke-opacity="0.65" />
+  <!-- Leaves along the stem -->
+  <path d="M52 195c-15-5-25-18-28-32 8-3 20 2 28 14" fill="#FAF4EB" fill-opacity="0.35" stroke="#B8A793" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" stroke-opacity="0.65" />
+  <path d="M56 160c18-8 30-3 36 10-10 6-24 2-33-6" fill="#FAF4EB" fill-opacity="0.35" stroke="#B8A793" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" stroke-opacity="0.65" />
+  <path d="M60 125c-16-10-22-24-20-38 10 1 20 10 23 24" fill="#FAF4EB" fill-opacity="0.35" stroke="#B8A793" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" stroke-opacity="0.65" />
+  <path d="M61 95c14-12 26-10 32 2-9 5-20 4-29-1" fill="#FAF4EB" fill-opacity="0.35" stroke="#B8A793" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" stroke-opacity="0.65" />
+  <path d="M57 65c-10-12-12-22-8-32 7 2 12 10 12 20" fill="#FAF4EB" fill-opacity="0.35" stroke="#B8A793" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke-opacity="0.6" />
+  <path d="M52 40c8-10 16-12 20-4-5 5-12 6-18 2" fill="#FAF4EB" fill-opacity="0.35" stroke="#B8A793" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke-opacity="0.6" />
+  <!-- Delicate tip -->
+  <path d="M48 20c-3-8-1-14 3-18 3 4 3 10-1 16" fill="#FAF4EB" fill-opacity="0.35" stroke="#B8A793" stroke-width="0.9" stroke-linecap="round" stroke-opacity="0.55" />
+</svg>

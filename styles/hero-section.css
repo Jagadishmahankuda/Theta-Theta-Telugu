@@ -1,0 +1,945 @@
+/* ==========================================================================
+   THETA THETA TELUGU — HERO SECTION STYLESHEET
+   Matches Desktop Reference (1366x768) Exactly
+   ========================================================================== */
+
+/* --- 1. Global Reset & Base Setup --- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  width: 100%;
+  min-height: 100%;
+  background-color: #F3E6DA;
+  color: #352F1F;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+/* --- 2. Header Placeholder --- */
+#header-placeholder {
+  width: 100%;
+  height: 100px;
+  background: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  pointer-events: none;
+}
+
+/* --- 3. Hero Section Root Container --- */
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 700px;
+  background-color: #F3E6DA;
+  overflow: hidden;
+  user-select: none;
+}
+
+/* --- 4. Botanical Leaves (Aesthetic Background) --- */
+.hero-botanicals {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  animation: heroFadeBotanicals 0.8s ease-out 0.2s both;
+}
+
+.hero-leaf {
+  position: absolute;
+  opacity: 0.7;
+  pointer-events: none;
+  user-select: none;
+  display: block;
+}
+
+/* (a) single_leaf: top-left about x=88-138, y=165-235, rot -15deg */
+.leaf-single-tl {
+  left: 7.2vw; /* ~98px at 1366 */
+  top: 24.5vh; /* ~188px at 768 */
+  width: clamp(42px, 3.8vw, 56px);
+  height: auto;
+  transform: rotate(-15deg);
+}
+
+/* (a) long_leaf: left edge, large, about x=0-175, y=285-480, partly cut by left edge */
+.leaf-long-l {
+  left: -22px;
+  top: 38.5vh; /* ~295px at 768 */
+  width: clamp(140px, 13.5vw, 195px);
+  height: auto;
+  transform: rotate(-8deg);
+}
+
+/* (a) medium_leaf: bottom-left about x=0-110, y=625-740 */
+.leaf-medium-bl {
+  left: 0;
+  bottom: 2.2vh; /* ~18px at 768 */
+  width: clamp(90px, 8.2vw, 120px);
+  height: auto;
+  transform: rotate(10deg);
+}
+
+/* (b) single_leaf: right side about x=1268-1313, y=262-333, rot +20deg */
+.leaf-single-tr {
+  left: 93.8vw; /* ~1281px at 1366 */
+  top: 36.5vh;  /* ~280px at 768 */
+  width: clamp(38px, 3.4vw, 50px);
+  height: auto;
+  transform: rotate(20deg);
+}
+
+/* (b) long_leaf: right edge, large, about x=1205-1366, y=415-600, partly cut, mirrored */
+.leaf-long-r {
+  right: -25px;
+  top: 55.5vh;  /* ~426px at 768 */
+  width: clamp(145px, 13.8vw, 195px);
+  height: auto;
+  transform: scaleX(-1) rotate(-12deg);
+}
+
+/* (c) single_leaf: right of plate about x=1030-1090, y=480-540, rot +15deg */
+.leaf-single-plate-r {
+  left: 77vw;  /* ~1051px at 1366 */
+  top: 66vh;   /* ~506px at 768 */
+  width: clamp(45px, 4.2vw, 60px);
+  height: auto;
+  transform: rotate(15deg);
+}
+
+/* (b) medium_leaf: bottom-right about x=1225-1366, y=620-768 */
+.leaf-medium-br {
+  right: 0;
+  bottom: 2.2vh; /* ~18px at 768 */
+  width: clamp(110px, 10vw, 145px);
+  height: auto;
+  transform: rotate(-10deg);
+}
+
+/* --- 5. Hero Entrance Keyframes & Easing --- */
+@keyframes heroFadeHeadline {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(22px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+@keyframes heroFadeLeftText {
+  0% {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroFadeExploreBtn {
+  0% {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Staggered Rise Animations for the Three Hero Pills */
+@keyframes heroRiseAuthentic {
+  0% {
+    opacity: 0;
+    transform: translateY(24px) rotate(-10deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) rotate(-10deg);
+  }
+}
+
+@keyframes heroRiseTraditions {
+  0% {
+    opacity: 0;
+    transform: translateY(24px) rotate(12deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) rotate(12deg);
+  }
+}
+
+@keyframes heroRiseCuisine {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(24px) rotate(-10deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0) rotate(-10deg);
+  }
+}
+
+@keyframes heroSettleBowl {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(22px) scale(0.96);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0) scale(1);
+  }
+}
+
+@keyframes heroFadeRing {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@keyframes heroFadeBotanicals {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* --- 6. Main Headline: TRULY TELUGU. --- */
+.hero-headline-wrap {
+  position: absolute;
+  top: 20.2vh; /* ~155px at 768 */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  white-space: nowrap;
+  animation: heroFadeHeadline 0.65s cubic-bezier(0.16, 1, 0.3, 1) 0.05s both;
+}
+
+.hero-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.hero-title-line {
+  display: block;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 900;
+  font-size: 11.4vw; /* ~156px at 1366 */
+  line-height: 0.81;
+  letter-spacing: -2.8px;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0;
+}
+
+.title-truly {
+  color: #352F1F;
+}
+
+.title-telugu {
+  color: #7B2A1B;
+  margin-top: -2px; /* almost touching Line 1 */
+}
+
+/* --- 7. Three Hero Pills & Hand-Drawn Bursts --- */
+.hero-pill-group {
+  position: absolute;
+  z-index: 25;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: auto;
+  will-change: transform, opacity;
+}
+
+.hero-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  border-radius: 999px;
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.28), 0 8px 20px rgba(0, 0, 0, 0.14);
+  white-space: nowrap;
+  user-select: none;
+  cursor: pointer;
+  transition: transform 300ms cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 300ms cubic-bezier(0.16, 1, 0.3, 1),
+              filter 300ms ease;
+}
+
+/* Desktop Restrained Pill Hover Micro-Interaction */
+@media (hover: hover) and (pointer: fine) {
+  .hero-pill-group:hover .hero-pill {
+    transform: translateY(-4px);
+    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.35), 0 12px 26px rgba(0, 0, 0, 0.2);
+    filter: brightness(1.03);
+  }
+
+  .hero-pill-group:hover .pill-burst-svg {
+    opacity: 0.95;
+    transition: opacity 300ms ease;
+  }
+}
+
+.hero-pill:active {
+  transform: translateY(-1px) scale(0.99);
+  transition-duration: 150ms;
+}
+
+.pill-burst-svg {
+  position: absolute;
+  pointer-events: none;
+  transition: opacity 300ms ease;
+}
+
+/* Pill 1: Authentic Flavours (Rust/orange-red bg, white text, 230x62px, rotate -10deg)
+   Starts FIRST in staggered sequence (delay: 0.25s) */
+.pill-group-authentic {
+  right: calc(50% + 20.2vw); /* ~407px right edge at 1366, right before "T" at ~417px */
+  top: calc(20.2vh + (11.4vw * 0.35)); /* ~210px at 1366x768 */
+  transform: rotate(-10deg);
+  transform-origin: center center;
+  animation: heroRiseAuthentic 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.25s both;
+}
+
+.pill-authentic {
+  background-color: #A8431F;
+  color: #FFFFFF;
+  width: clamp(190px, 16.8vw, 240px);
+  height: clamp(52px, 4.5vw, 64px);
+  font-size: clamp(15px, 1.35vw, 19px);
+  letter-spacing: -0.2px;
+}
+
+.burst-authentic {
+  top: -16px;
+  left: -22px;
+  width: 48px;
+  height: 40px;
+}
+
+/* Pill 2: Rich Traditions (Dark olive green bg, white text, 210x62px, rotate +12deg)
+   Starts SECOND in staggered sequence (~140ms later, delay: 0.39s) */
+.pill-group-traditions {
+  left: calc(50% + 20.8vw); /* ~967px left edge at 1366, right after "Y" at ~949px */
+  top: calc(20.2vh + (11.4vw * 0.35)); /* ~210px at 1366x768 */
+  transform: rotate(12deg);
+  transform-origin: center center;
+  animation: heroRiseTraditions 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.39s both;
+}
+
+.pill-traditions {
+  background-color: #4A5A3A;
+  color: #FFFFFF;
+  width: clamp(175px, 15.4vw, 220px);
+  height: clamp(52px, 4.5vw, 64px);
+  font-size: clamp(15px, 1.35vw, 19px);
+  letter-spacing: -0.2px;
+}
+
+.burst-traditions {
+  top: -16px;
+  right: -24px;
+  width: 48px;
+  height: 40px;
+}
+
+/* Pill 3: Telugu Cuisine (Yellow bg, dark brown text, 190x50px, rotate -10deg)
+   Starts THIRD in staggered sequence (~140ms after second, delay: 0.53s) */
+.pill-group-cuisine {
+  left: 50%;
+  top: calc(20.2vh + (11.4vw * 1.54)); /* ~396px at 1366x768, safely below TELUGU. letters */
+  transform: translateX(-50%) rotate(-10deg);
+  transform-origin: center center;
+  z-index: 26;
+  animation: heroRiseCuisine 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.53s both;
+}
+
+.pill-cuisine {
+  background-color: #F7C65B;
+  color: #352F1F;
+  width: clamp(160px, 13.9vw, 195px);
+  height: clamp(44px, 3.7vw, 52px);
+  font-size: clamp(14px, 1.25vw, 17px);
+  letter-spacing: -0.2px;
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.4), 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.burst-cuisine-left {
+  bottom: -10px;
+  left: -24px;
+  width: 40px;
+  height: 34px;
+}
+
+.burst-cuisine-right {
+  top: -12px;
+  right: -24px;
+  width: 40px;
+  height: 34px;
+}
+
+/* --- 8. Left Content (Paragraph & Explore Menu CTA) --- */
+.hero-left-content {
+  position: absolute;
+  left: 5.7vw; /* ~78px at 1366 */
+  top: 58vh;   /* ~445px at 768 */
+  max-width: 250px;
+  z-index: 25;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.hero-left-text {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 1.45;
+  color: #3A2F26;
+  margin: 0 0 26px 0;
+  animation: heroFadeLeftText 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.12s both;
+}
+
+.hero-explore-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 236px;
+  height: 56px;
+  box-sizing: border-box;
+  padding: 0 58px 0 26px;
+  background-color: #8D2D1C;
+  color: #FFFFFF;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 15.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  border-radius: 9999px;
+  box-shadow: 0 8px 20px rgba(141, 45, 28, 0.32);
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+  transition: padding 350ms cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 300ms ease,
+              box-shadow 350ms cubic-bezier(0.16, 1, 0.3, 1),
+              transform 350ms cubic-bezier(0.16, 1, 0.3, 1);
+  user-select: none;
+  animation: heroFadeExploreBtn 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.18s both;
+}
+
+.hero-explore-btn:hover {
+  padding: 0 26px 0 58px;
+  background-color: #7d2617;
+  transform: translateY(-3px);
+  box-shadow: 0 14px 30px rgba(141, 45, 28, 0.45);
+}
+
+.hero-explore-btn:active {
+  transform: translateY(0) scale(0.97);
+  box-shadow: 0 4px 12px rgba(141, 45, 28, 0.3);
+  transition-duration: 150ms;
+}
+
+.hero-explore-btn:focus-visible {
+  outline: 2px solid #D9A83E;
+  outline-offset: 3px;
+}
+
+.hero-explore-btn .btn-text {
+  position: relative;
+  z-index: 10;
+  color: #FFFFFF;
+  line-height: 1;
+  white-space: nowrap;
+  pointer-events: none;
+  transition: transform 350ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-explore-btn .btn-arrow-circle {
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background-color: #D9A83E;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  transition: right 350ms cubic-bezier(0.16, 1, 0.3, 1),
+              transform 350ms cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 300ms ease;
+  pointer-events: none;
+}
+
+.hero-explore-btn:hover .btn-arrow-circle {
+  right: calc(100% - 49px);
+  transform: rotate(45deg);
+}
+
+.hero-explore-btn .btn-arrow-circle svg {
+  display: block;
+  width: 18px;
+  height: 18px;
+  color: #FFFFFF;
+  stroke: #FFFFFF;
+  transition: transform 350ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* --- 9. Plate (bowl.png) & Concentric Ring --- */
+.hero-plate-wrapper {
+  position: absolute;
+  left: 50%;
+  top: 54.7vh; /* ~420px at 768 */
+  transform: translateX(-50%);
+  width: 44.14vw; /* ~603px at 1366 */
+  height: 44.14vw;
+  z-index: 10;
+  pointer-events: none;
+  animation: heroSettleBowl 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
+  will-change: transform, opacity;
+}
+
+.hero-plate-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  animation: heroSpin 40s linear infinite;
+  transform-origin: center center;
+  will-change: transform;
+}
+
+@keyframes heroSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Concentric ring behind the plate: 1.2x plate diameter (~745px on 1366 = 54.5vw) */
+.hero-ring {
+  position: absolute;
+  left: 50%;
+  top: calc(54.7vh + (44.14vw / 2));
+  transform: translate(-50%, -50%);
+  width: 54.5vw;
+  height: 54.5vw;
+  border-radius: 50%;
+  border: 1.5px solid #D9BFA8;
+  z-index: 2;
+  pointer-events: none;
+  animation: heroFadeRing 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.15s both;
+}
+
+/* --- 10. Responsive Adjustments for Tablet & Mobile --- */
+@media (max-width: 1024px) {
+  .hero-section {
+    min-height: 850px;
+  }
+
+  .hero-headline-wrap {
+    top: 18vh;
+  }
+
+  .hero-title-line {
+    font-size: clamp(54px, 11vw, 110px);
+  }
+
+  .pill-group-authentic {
+    right: calc(50% + 22vw);
+    top: 25vh;
+  }
+
+  .pill-group-traditions {
+    left: calc(50% + 22vw);
+    top: 25vh;
+  }
+
+  .pill-group-cuisine {
+    top: 46vh;
+  }
+
+  .hero-left-content {
+    left: 4vw;
+    top: 56vh;
+    max-width: 220px;
+  }
+
+  .leaf-single-plate-r {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  @keyframes heroFadeHeadlineMobile {
+    0% {
+      opacity: 0;
+      transform: translateY(18px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* 1. Mobile Hero Root Section: Clean viewport presentation, no horizontal scroll */
+  .hero-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    min-height: 600px;
+    background-color: #F2E7D8;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-bottom: 0;
+    --mobile-bowl-size: clamp(450px, 122vw, 550px);
+    --mobile-bowl-bottom: clamp(-170px, -18vh, -130px);
+    --mobile-ring-size: calc(var(--mobile-bowl-size) * 1.16);
+  }
+
+  /* 2. Hide all three decorative pills & their hand-drawn bursts completely on mobile */
+  .hero-pill-group {
+    display: none !important;
+  }
+
+  /* 3. Clean mobile background: Hide leaves in mobile hero to match Screenshot 2 */
+  .hero-botanicals {
+    display: none !important;
+  }
+
+  /* 4. Main Headline: TRULY TELUGU. moved upward with balanced spacing */
+  .hero-headline-wrap {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    margin-top: clamp(106px, 15vh, 138px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    z-index: 20;
+    pointer-events: none;
+    animation: heroFadeHeadlineMobile 0.65s cubic-bezier(0.16, 1, 0.3, 1) 0.05s both;
+  }
+
+  .hero-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+  }
+
+  .hero-title-line {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 900;
+    font-size: clamp(44px, 13vw, 56px);
+    line-height: 0.82;
+    letter-spacing: -2px;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+  }
+
+  .title-truly {
+    color: #352F1F;
+  }
+
+  .title-telugu {
+    color: #7B2A1B;
+    margin-top: -2px;
+  }
+
+  /* 5. Left Content: Description Paragraph + Explore Menu CTA Button moved upward */
+  .hero-left-content {
+    position: relative;
+    left: auto;
+    top: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: clamp(14px, 2.2vh, 22px);
+    max-width: 320px;
+    width: 100%;
+    padding: 0 16px;
+    box-sizing: border-box;
+    z-index: 25;
+    pointer-events: auto;
+  }
+
+  .hero-left-text {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: clamp(13.5px, 3.7vw, 15px);
+    line-height: 1.48;
+    color: #3A2F26;
+    text-align: center;
+    margin: 0 0 clamp(18px, 2.8vh, 26px) 0;
+    animation: heroFadeLeftText 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.12s both;
+  }
+
+  .hero-explore-btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: clamp(220px, 62vw, 244px);
+    height: 56px;
+    box-sizing: border-box;
+    padding: 0 56px 0 24px;
+    background-color: #8D2D1C;
+    color: #FFFFFF;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 14.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    border-radius: 9999px;
+    box-shadow: 0 8px 24px rgba(141, 45, 28, 0.35);
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+    transition: padding 350ms cubic-bezier(0.16, 1, 0.3, 1),
+                background-color 300ms ease,
+                box-shadow 350ms cubic-bezier(0.16, 1, 0.3, 1),
+                transform 350ms cubic-bezier(0.16, 1, 0.3, 1);
+    user-select: none;
+    animation: heroFadeExploreBtn 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.18s both;
+  }
+
+  .hero-explore-btn:hover {
+    padding: 0 24px 0 56px;
+    background-color: #7d2617;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(141, 45, 28, 0.45);
+  }
+
+  .hero-explore-btn:active {
+    transform: translateY(0) scale(0.98);
+    box-shadow: 0 4px 12px rgba(141, 45, 28, 0.3);
+  }
+
+  .hero-explore-btn .btn-text {
+    position: relative;
+    z-index: 10;
+    color: #FFFFFF;
+    line-height: 1;
+    white-space: nowrap;
+    pointer-events: none;
+  }
+
+  .hero-explore-btn .btn-arrow-circle {
+    position: absolute;
+    top: 7px;
+    right: 7px;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background-color: #D9A83E;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    transition: right 350ms cubic-bezier(0.16, 1, 0.3, 1),
+                transform 350ms cubic-bezier(0.16, 1, 0.3, 1),
+                background-color 300ms ease;
+    pointer-events: none;
+  }
+
+  .hero-explore-btn:hover .btn-arrow-circle {
+    right: calc(100% - 49px);
+    transform: rotate(45deg);
+  }
+
+  /* 6. Rotating Food Bowl & Concentric Ring: Enlarge, center & emerge from bottom edge */
+  .hero-plate-wrapper {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: var(--mobile-bowl-bottom);
+    width: var(--mobile-bowl-size);
+    height: var(--mobile-bowl-size);
+    z-index: 10;
+    pointer-events: none;
+    animation: heroSettleBowl 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
+    will-change: transform, opacity;
+  }
+
+  .hero-plate-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    animation: heroSpin 40s linear infinite;
+    transform-origin: center center;
+    will-change: transform;
+  }
+
+  .hero-ring {
+    position: absolute;
+    left: 50%;
+    top: auto;
+    bottom: calc(var(--mobile-bowl-bottom) - ((var(--mobile-ring-size) - var(--mobile-bowl-size)) / 2));
+    transform: translateX(-50%);
+    width: var(--mobile-ring-size);
+    height: var(--mobile-ring-size);
+    border-radius: 50%;
+    border: 1.5px solid #D9BFA8;
+    z-index: 2;
+    pointer-events: none;
+    animation: heroFadeRing 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.15s both;
+  }
+}
+
+/* Small mobile refinement (320px - 380px) */
+@media (max-width: 380px) {
+  .hero-section {
+    --mobile-bowl-size: clamp(390px, 120vw, 440px);
+    --mobile-bowl-bottom: clamp(-150px, -18vh, -120px);
+  }
+
+  .hero-headline-wrap {
+    margin-top: clamp(96px, 14vh, 114px);
+  }
+
+  .hero-title-line {
+    font-size: clamp(38px, 12vw, 44px);
+    letter-spacing: -1.5px;
+  }
+
+  .hero-left-text {
+    font-size: 13.5px;
+    margin-bottom: 16px;
+  }
+
+  .hero-explore-btn {
+    width: 210px;
+    height: 50px;
+    font-size: 13.5px;
+    padding: 0 50px 0 20px;
+  }
+
+  .hero-explore-btn .btn-arrow-circle {
+    top: 6px;
+    right: 6px;
+    width: 38px;
+    height: 38px;
+  }
+}
+
+/* --- 11. Accessibility: Prefers Reduced Motion --- */
+@media (prefers-reduced-motion: reduce) {
+  .hero-headline-wrap,
+  .hero-left-text,
+  .hero-explore-btn,
+  .hero-explore-btn .btn-text,
+  .hero-explore-btn .btn-arrow-circle,
+  .hero-explore-btn .btn-arrow-circle svg,
+  .hero-pill-group,
+  .hero-pill,
+  .pill-burst-svg,
+  .hero-plate-wrapper,
+  .hero-plate-img,
+  .hero-ring,
+  .hero-botanicals {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .hero-headline-wrap,
+  .hero-left-text,
+  .hero-explore-btn,
+  .hero-pill-group,
+  .hero-plate-wrapper,
+  .hero-ring,
+  .hero-botanicals {
+    opacity: 1 !important;
+  }
+
+  /* Restore exact resting transforms */
+  .hero-headline-wrap {
+    transform: translateX(-50%) !important;
+  }
+  .pill-group-authentic {
+    transform: rotate(-10deg) !important;
+  }
+  .pill-group-traditions {
+    transform: rotate(12deg) !important;
+  }
+  .pill-group-cuisine {
+    transform: translateX(-50%) rotate(-10deg) !important;
+  }
+  .hero-plate-wrapper {
+    transform: translateX(-50%) !important;
+  }
+  .hero-ring {
+    transform: translate(-50%, -50%) !important;
+  }
+}
+
+@media (max-width: 768px) and (prefers-reduced-motion: reduce) {
+  .hero-headline-wrap {
+    transform: none !important;
+  }
+  .hero-plate-wrapper {
+    transform: translateX(-50%) !important;
+  }
+  .hero-ring {
+    transform: translateX(-50%) !important;
+  }
+  .hero-plate-img {
+    animation: none !important;
+  }
+}

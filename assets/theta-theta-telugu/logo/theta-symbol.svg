@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 46 60" fill="none">
+  <!-- Left Telugu stylized letter ఠ -->
+  <!-- Top vertical stem -->
+  <path d="M10 13v15" stroke="#78301F" stroke-width="4.8" stroke-linecap="round" stroke-linejoin="round" />
+  <!-- Left pill loop with inner core -->
+  <path d="M10 27h6c4 0 6 2 6 5.5s-2 5.5-6 5.5h-5c-4.5 0-8 3-8 7.5s3.5 7.5 8 7.5h10c5 0 8-3.5 8-8v-3" stroke="#78301F" stroke-width="4.8" stroke-linecap="round" stroke-linejoin="round" />
+  <!-- Right interlocking stylized loop with waist -->
+  <path d="M29 18h11v9c0 4-3 5.5-6.5 5.5h-2.5c-3 0-4.5 2-4.5 4.5v1c0 4 3 6.5 7 6.5h4c4 0 6.5-2.5 6.5-6" stroke="#78301F" stroke-width="4.8" stroke-linecap="round" stroke-linejoin="round" />
+</svg>

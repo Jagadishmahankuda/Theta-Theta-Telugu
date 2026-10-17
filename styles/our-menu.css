@@ -1,0 +1,451 @@
+/* ==========================================================================
+   THETA THETA TELUGU — OUR MENU SECTION STYLESHEET
+   Aesthetic: Warm Editorial Heritage Luxury
+   Palette: Background (#F7E9D7), Olive (#242719), Terracotta (#8B2119),
+            Body Text (#76634D), Borders (#EAD7BC)
+   ========================================================================== */
+
+/* --- 1. Scoped Menu Variables --- */
+.our-menu-section {
+  --menu-bg: #F7E9D7;
+  --menu-olive: #242719;
+  --menu-terracotta: #8B2119;
+  --menu-terracotta-hover: #751B14;
+  --menu-body: #76634D;
+  --menu-border: #EAD7BC;
+  --menu-border-hover: #D9B78D;
+  --menu-card-bg: #FFFDF9;
+  --menu-pill-inactive-bg: #EFE3D3;
+  --menu-shadow-soft: 0 10px 24px -8px rgba(118, 99, 77, 0.09);
+  --menu-shadow-hover: 0 18px 36px -10px rgba(139, 33, 25, 0.15);
+  
+  --font-serif: 'Playfair Display', 'Cinzel', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, sans-serif;
+
+  position: relative;
+  width: 100%;
+  background-color: var(--menu-bg);
+  padding: clamp(64px, 7.5vw, 110px) 24px clamp(80px, 9vw, 130px);
+  color: var(--menu-olive);
+  font-family: var(--font-sans);
+  overflow: hidden;
+}
+
+/* Subtle background illumination texture */
+.our-menu-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 1400px;
+  height: 500px;
+  background: radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.45) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* --- 2. Inner Container --- */
+.menu-inner-container {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* --- 3. Heading & Header Group --- */
+.menu-header-group {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.menu-eyebrow {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--menu-terracotta);
+  margin-bottom: 12px;
+}
+
+.menu-heading-divider {
+  margin-bottom: 18px;
+  display: flex;
+  justify-content: center;
+}
+
+.heading-divider-svg {
+  width: 110px;
+  height: auto;
+  display: block;
+}
+
+.menu-main-heading {
+  font-family: var(--font-serif);
+  font-size: clamp(2.4rem, 4.4vw, 3.8rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  margin: 0 0 16px 0;
+  text-align: center;
+}
+
+.heading-olive {
+  color: var(--menu-olive);
+}
+
+.heading-terracotta {
+  color: var(--menu-terracotta);
+  font-style: italic;
+}
+
+.menu-intro-desc {
+  font-family: var(--font-sans);
+  font-size: clamp(0.95rem, 1.2vw, 1.08rem);
+  line-height: 1.65;
+  color: var(--menu-body);
+  max-width: 620px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* --- 4. Category Filter Controls --- */
+.menu-filter-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin: 36px 0 52px;
+}
+
+.menu-filter-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 11px 26px;
+  border-radius: 9999px;
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  background-color: var(--menu-pill-inactive-bg);
+  color: var(--menu-olive);
+  border: 1px solid var(--menu-border);
+  box-shadow: 0 2px 8px rgba(118, 99, 77, 0.06);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.25s ease,
+              border-color 0.25s ease,
+              color 0.25s ease;
+  outline: none;
+}
+
+.menu-filter-btn:active {
+  transform: translateY(0) scale(0.97);
+  transition-duration: 150ms;
+}
+
+.menu-filter-btn .filter-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+}
+
+.menu-filter-btn .filter-icon-img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+  filter: brightness(0) saturate(100%) invert(18%) sepia(50%) saturate(3000%) hue-rotate(340deg) brightness(85%) contrast(95%);
+  transition: filter 0.25s ease;
+}
+
+/* Inactive button hover */
+.menu-filter-btn:hover:not(.active) {
+  background-color: #E6D7C3;
+  border-color: var(--menu-border-hover);
+  transform: translateY(-1.5px);
+  box-shadow: 0 4px 12px rgba(118, 99, 77, 0.12);
+}
+
+/* Active filter state */
+.menu-filter-btn.active {
+  background-color: var(--menu-terracotta);
+  color: #FFFDF9;
+  border-color: var(--menu-terracotta);
+  box-shadow: 0 6px 18px rgba(139, 33, 25, 0.28);
+  transform: translateY(-1px);
+}
+
+.menu-filter-btn.active .filter-icon-img {
+  filter: brightness(0) invert(1);
+}
+
+/* Keyboard focus state */
+.menu-filter-btn:focus-visible {
+  outline: 2px solid var(--menu-terracotta);
+  outline-offset: 3px;
+}
+
+/* --- 5. Food Cards Grid Layout --- */
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+  width: 100%;
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.25s ease, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.menu-grid.grid-transitioning {
+  opacity: 0;
+  transform: translateY(8px);
+}
+
+/* --- 6. Menu Card Component --- */
+.menu-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: var(--menu-card-bg);
+  border: 1px solid var(--menu-border);
+  border-radius: 20px;
+  padding: 26px 20px 24px;
+  box-shadow: var(--menu-shadow-soft);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.3s ease;
+  will-change: transform;
+}
+
+/* Desktop Restrained Menu Card Hover */
+@media (hover: hover) and (pointer: fine) {
+  .menu-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 34px -8px rgba(139, 33, 25, 0.16), 0 6px 14px -2px rgba(118, 99, 77, 0.08);
+    border-color: var(--menu-border-hover);
+  }
+
+  .menu-card:hover .menu-card-img {
+    transform: scale(1.035);
+  }
+}
+
+/* Food Image Container: Circular aspect-ratio 1 */
+.menu-card-image-wrap {
+  width: 100%;
+  max-width: 180px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto 20px;
+  box-shadow: 0 10px 22px -6px rgba(36, 39, 25, 0.16);
+  border: 2px solid #FFFDF9;
+  background-color: #F0E2D0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Card Content Area */
+.menu-card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  width: 100%;
+}
+
+.menu-card-title {
+  font-family: var(--font-serif);
+  font-size: 1.18rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--menu-olive);
+  margin-bottom: 8px;
+  letter-spacing: -0.01em;
+  min-height: 2.6em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-card-desc {
+  font-family: var(--font-sans);
+  font-size: 0.84rem;
+  line-height: 1.5;
+  color: var(--menu-body);
+  margin-bottom: 14px;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Thin Ornamental Card Divider */
+.menu-card-divider {
+  width: 100%;
+  max-width: 130px;
+  margin: 4px auto 14px;
+  display: flex;
+  justify-content: center;
+}
+
+.menu-card-divider-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Price Display */
+.menu-card-price {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--menu-terracotta);
+  letter-spacing: 0.02em;
+}
+
+/* --- 7. Responsive Breakpoints --- */
+
+/* Desktop & Tablet (> 768px): Always display all 8 cards */
+@media (min-width: 769px) {
+  .menu-card-mobile-hidden {
+    display: flex !important;
+  }
+}
+
+/* Tablet (1024px and below) */
+@media (max-width: 1024px) {
+  .our-menu-section {
+    padding: 56px 20px 80px;
+  }
+
+  .menu-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .menu-card-image-wrap {
+    max-width: 170px;
+  }
+
+  .menu-card-title {
+    min-height: auto;
+  }
+}
+
+/* Mobile landscape / small tablet (768px and below) */
+@media (max-width: 768px) {
+  /* Mobile Optimization: Show only first 4 menu cards, hide cards 5 through 8 */
+  .menu-card-mobile-hidden,
+  .menu-grid > .menu-card:nth-child(n+5) {
+    display: none !important;
+  }
+
+  .menu-filter-row {
+    gap: 10px;
+    margin: 28px 0 38px;
+  }
+
+  .menu-filter-btn {
+    padding: 9px 18px;
+    font-size: 0.82rem;
+  }
+
+  .menu-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .menu-card {
+    padding: 20px 14px 18px;
+    border-radius: 16px;
+  }
+
+  .menu-card-image-wrap {
+    max-width: 140px;
+    margin-bottom: 14px;
+  }
+
+  .menu-card-title {
+    font-size: 1.05rem;
+  }
+
+  .menu-card-desc {
+    font-size: 0.8rem;
+  }
+
+  .menu-card-price {
+    font-size: 1.15rem;
+  }
+}
+
+/* Small mobile (480px and below) */
+@media (max-width: 480px) {
+  .our-menu-section {
+    padding: 48px 16px 64px;
+  }
+
+  .menu-main-heading {
+    font-size: 2.1rem;
+  }
+
+  .menu-filter-row {
+    flex-direction: row;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .menu-filter-btn {
+    padding: 8px 14px;
+    font-size: 0.78rem;
+    gap: 6px;
+  }
+
+  .menu-grid {
+    grid-template-columns: 1fr;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  .menu-card-image-wrap {
+    max-width: 160px;
+  }
+}
+
+/* --- 10. Accessibility: Prefers Reduced Motion --- */
+@media (prefers-reduced-motion: reduce) {
+  .menu-filter-btn,
+  .menu-grid,
+  .menu-card,
+  .menu-card-img {
+    transition: none !important;
+    transform: none !important;
+    animation: none !important;
+  }
+}
+

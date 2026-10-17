@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 100" fill="none">
+  <!-- Subtle fan of lotus petals / flower bud -->
+  <g stroke="#B8A793" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" stroke-opacity="0.65">
+    <!-- Center stem dot -->
+    <path d="M45 82v-12" />
+    <!-- Radiating petals -->
+    <path d="M45 70C43 45 42 20 45 5c3 15 2 40 0 65" fill="#FAF4EB" fill-opacity="0.25" />
+    <path d="M43 72C35 52 28 35 20 18c8 10 18 30 23 54" fill="#FAF4EB" fill-opacity="0.25" />
+    <path d="M47 72C55 52 62 35 70 18c-8 10-18 30-23 54" fill="#FAF4EB" fill-opacity="0.25" />
+    <path d="M40 75C28 62 18 48 8 36c10 6 22 20 32 39" fill="#FAF4EB" fill-opacity="0.25" />
+    <path d="M50 75C62 62 72 48 82 36c-10 6-22 20-32 39" fill="#FAF4EB" fill-opacity="0.25" />
+  </g>
+  <!-- Fine pollen specks -->
+  <circle cx="45" cy="4" r="1" fill="#B8A793" fill-opacity="0.6" />
+  <circle cx="20" cy="17" r="1" fill="#B8A793" fill-opacity="0.6" />
+  <circle cx="70" cy="17" r="1" fill="#B8A793" fill-opacity="0.6" />
+</svg>

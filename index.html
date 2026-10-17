@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Theta Theta Telugu — A celebrated fine dining culinary journey into the rich heritage of authentic Telugu gastronomy.">
+  <title>Theta Theta Telugu — Truly Telugu</title>
+
+  <!-- Google Fonts: Poppins, Plus Jakarta Sans, Playfair Display -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="styles/site-header.css">
+  <link rel="stylesheet" href="styles/hero-section.css">
+  <link rel="stylesheet" href="styles/our-menu.css">
+  <link rel="stylesheet" href="styles/our-story.css">
+  <link rel="stylesheet" href="styles/gallery-section.css">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       SITE HEADER — THETA THETA TELUGU
+       Pixel-accurate matching reference design (1024x90)
+       ========================================================================== -->
+  <header class="site-header" id="siteHeader">
+    <div class="header-container">
+      <!-- Left: Brand Logo Plaque -->
+      <a href="#hero" class="header-logo-link" aria-label="Theta Theta Telugu Home">
+        <img src="assets/theta theta telugu logo.png" alt="Theta Theta Telugu" class="header-logo-img" />
+      </a>
+
+      <!-- Center: Navigation Links (No pill container) -->
+      <nav class="header-nav" aria-label="Main Navigation">
+        <ul class="header-nav-list" role="menubar">
+          <li class="header-nav-item" role="none">
+            <a href="#hero" class="header-nav-link active" data-section="hero" role="menuitem" aria-current="page">
+              <span class="nav-link-text">Home</span>
+              <span class="nav-link-indicator" aria-hidden="true"></span>
+            </a>
+          </li>
+          <li class="header-nav-item" role="none">
+            <a href="#menu" class="header-nav-link" data-section="menu" role="menuitem">
+              <span class="nav-link-text">Menu</span>
+              <span class="nav-link-indicator" aria-hidden="true"></span>
+            </a>
+          </li>
+          <li class="header-nav-item" role="none">
+            <a href="#story" class="header-nav-link" data-section="story" role="menuitem">
+              <span class="nav-link-text">Our Stories</span>
+              <span class="nav-link-indicator" aria-hidden="true"></span>
+            </a>
+          </li>
+          <li class="header-nav-item" role="none">
+            <a href="#gallery" class="header-nav-link" data-section="gallery" role="menuitem">
+              <span class="nav-link-text">Gallery</span>
+              <span class="nav-link-indicator" aria-hidden="true"></span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Right: Actions / Reserve Button -->
+      <div class="header-actions">
+        <a href="#reserve" class="header-reserve-btn" role="button" aria-label="Reserve a Table">
+          <span class="reserve-btn-text">RESERVE A TABLE</span>
+          <span class="reserve-btn-arrow-wrap" aria-hidden="true">
+            <svg class="reserve-btn-arrow-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </span>
+        </a>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button type="button" class="header-menu-toggle" aria-expanded="false" aria-controls="mobileNavMenu" aria-label="Open Navigation Menu">
+          <span class="menu-toggle-bar"></span>
+          <span class="menu-toggle-bar"></span>
+          <span class="menu-toggle-bar"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="header-mobile-drawer" id="mobileNavMenu" aria-hidden="true">
+      <nav class="mobile-nav" aria-label="Mobile Navigation">
+        <ul class="mobile-nav-list">
+          <li>
+            <a href="#hero" class="mobile-nav-link active" data-section="hero">Home</a>
+          </li>
+          <li>
+            <a href="#menu" class="mobile-nav-link" data-section="menu">Menu</a>
+          </li>
+          <li>
+            <a href="#story" class="mobile-nav-link" data-section="story">Our Stories</a>
+          </li>
+          <li>
+            <a href="#gallery" class="mobile-nav-link" data-section="gallery">Gallery</a>
+          </li>
+        </ul>
+        <div class="mobile-reserve-wrap">
+          <a href="#reserve" class="header-reserve-btn mobile-reserve-btn" role="button" aria-label="Reserve a Table">
+            <span class="reserve-btn-text">RESERVE A TABLE</span>
+            <span class="reserve-btn-arrow-wrap" aria-hidden="true">
+              <svg class="reserve-btn-arrow-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </span>
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       HERO SECTION — TRULY TELUGU
+       Pixel-accurate matching 1366x768 desktop reference
+       ========================================================================== -->
+  <section class="hero-section" id="hero" aria-label="Hero Section">
+    
+    <!-- Concentric circular ring behind plate -->
+    <div class="hero-ring" aria-hidden="true"></div>
+
+    <!-- Botanical Leaves (aesthetic background) -->
+    <div class="hero-botanicals" aria-hidden="true">
+      <!-- single_leaf.png: (a) top-left about x=88-138, y=165-235, rotated about -15deg -->
+      <img src="assets/single_leaf.png" alt="" class="hero-leaf leaf-single-tl" />
+
+      <!-- long_leaf.png: (a) left edge, large, about x=0-175, y=285-480, partly cut by left edge -->
+      <img src="assets/long_leaf.png" alt="" class="hero-leaf leaf-long-l" />
+
+      <!-- medium_leaf.png: (a) bottom-left about x=0-110, y=625-740 -->
+      <img src="assets/medium_leaf.png" alt="" class="hero-leaf leaf-medium-bl" />
+
+      <!-- single_leaf.png: (b) right side about x=1268-1313, y=262-333, rotated about +20deg -->
+      <img src="assets/single_leaf.png" alt="" class="hero-leaf leaf-single-tr" />
+
+      <!-- long_leaf.png: (b) right edge, large, about x=1205-1366, y=415-600, partly cut by right edge, mirrored -->
+      <img src="assets/long_leaf.png" alt="" class="hero-leaf leaf-long-r" />
+
+      <!-- single_leaf.png: (c) right of the plate about x=1030-1090, y=480-540, rotated about +15deg -->
+      <img src="assets/single_leaf.png" alt="" class="hero-leaf leaf-single-plate-r" />
+
+      <!-- medium_leaf.png: (b) bottom-right about x=1225-1366, y=620-768 -->
+      <img src="assets/medium_leaf.png" alt="" class="hero-leaf leaf-medium-br" />
+    </div>
+
+    <!-- Main Headline: TRULY TELUGU. -->
+    <div class="hero-headline-wrap">
+      <h1 class="hero-title">
+        <span class="hero-title-line title-truly">TRULY</span>
+        <span class="hero-title-line title-telugu">TELUGU.</span>
+      </h1>
+    </div>
+
+    <!-- Pill 1: Authentic Flavours + burst lines -->
+    <div class="hero-pill-group pill-group-authentic">
+      <svg class="pill-burst-svg burst-authentic" viewBox="0 0 50 40" fill="none" aria-hidden="true">
+        <line x1="38" y1="36" x2="22" y2="18" stroke="#A8431F" stroke-width="2.2" stroke-linecap="round"/>
+        <line x1="24" y1="38" x2="6" y2="28" stroke="#A8431F" stroke-width="2.2" stroke-linecap="round"/>
+        <line x1="42" y1="22" x2="32" y2="6" stroke="#A8431F" stroke-width="2.2" stroke-linecap="round"/>
+      </svg>
+      <div class="hero-pill pill-authentic">
+        <span>Authentic Flavours</span>
+      </div>
+    </div>
+
+    <!-- Pill 2: Rich Traditions + burst lines -->
+    <div class="hero-pill-group pill-group-traditions">
+      <div class="hero-pill pill-traditions">
+        <span>Rich Traditions</span>
+      </div>
+      <svg class="pill-burst-svg burst-traditions" viewBox="0 0 50 40" fill="none" aria-hidden="true">
+        <line x1="12" y1="36" x2="28" y2="18" stroke="#4A5A3A" stroke-width="2.2" stroke-linecap="round"/>
+        <line x1="26" y1="38" x2="44" y2="28" stroke="#4A5A3A" stroke-width="2.2" stroke-linecap="round"/>
+        <line x1="8" y1="22" x2="18" y2="6" stroke="#4A5A3A" stroke-width="2.2" stroke-linecap="round"/>
+      </svg>
+    </div>
+
+    <!-- Pill 3: Telugu Cuisine + burst lines -->
+    <div class="hero-pill-group pill-group-cuisine">
+      <svg class="pill-burst-svg burst-cuisine-left" viewBox="0 0 45 40" fill="none" aria-hidden="true">
+        <line x1="36" y1="8" x2="16" y2="28" stroke="#F7C65B" stroke-width="2.2" stroke-linecap="round"/>
+        <line x1="38" y1="20" x2="22" y2="34" stroke="#F7C65B" stroke-width="2.2" stroke-linecap="round"/>
+      </svg>
+      <div class="hero-pill pill-cuisine">
+        <span>Telugu Cuisine</span>
+      </div>
+      <svg class="pill-burst-svg burst-cuisine-right" viewBox="0 0 45 40" fill="none" aria-hidden="true">
+        <line x1="10" y1="28" x2="30" y2="8" stroke="#352F1F" stroke-width="2.2" stroke-linecap="round"/>
+        <line x1="18" y1="34" x2="36" y2="20" stroke="#352F1F" stroke-width="2.2" stroke-linecap="round"/>
+      </svg>
+    </div>
+
+    <!-- Left Content: Description Paragraph + Explore Menu CTA Button -->
+    <div class="hero-left-content">
+      <p class="hero-left-text">
+        Discover Curated Telugu Dishes<br>
+        Crafted By Traditional Flavours For<br>
+        Unforgettable Dining Experiences
+      </p>
+      <a href="#menu" class="hero-explore-btn" id="heroExploreMenuBtn" role="button" aria-label="Explore Menu">
+        <span class="btn-text">EXPLORE MENU</span>
+        <span class="btn-arrow-circle" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14M13 6l6 6-6 6"/>
+          </svg>
+        </span>
+      </a>
+    </div>
+
+    <!-- Main Rotating Food Plate (bowl.png) -->
+    <div class="hero-plate-wrapper">
+      <img src="assets/bowl.png"
+           id="heroFoodImage"
+           alt="Theta Theta Telugu Signature Artisanal Dish"
+           class="hero-plate-img" />
+    </div>
+
+  </section>
+
+  <!-- ==========================================================================
+       OUR MENU SECTION
+       Directly following Hero Section
+       ========================================================================== -->
+  <section class="our-menu-section" id="menu" aria-label="Our Menu">
+    <div id="menuContainer"></div>
+  </section>
+
+  <!-- ==========================================================================
+       OUR STORY SECTION (ProcessBoard)
+       Directly following Our Menu Section
+       ========================================================================== -->
+  <section class="our-story-section" id="story" aria-label="Our Story">
+    <div id="storyContainer"></div>
+  </section>
+
+  <!-- ==========================================================================
+       GALLERY SECTION (OrbitCoverflow)
+       Directly following Our Story Section
+       ========================================================================== -->
+  <section class="gallery-section" id="gallery" aria-label="Restaurant Gallery">
+    <span id="experience" style="position: absolute; top: 0;" aria-hidden="true"></span>
+    <div id="galleryContainer"></div>
+  </section>
+
+  <!-- Component Scripts -->
+  <script type="module">
+    import { initHeader } from './src/components/Header.js';
+    import { initHeroSection } from './src/components/HeroSection.js';
+    import { initOurMenuSection } from './src/components/OurMenuSection.js';
+    import { initOurStorySection } from './src/components/OurStorySection.js';
+    import { initGallerySection } from './src/components/GallerySection.js';
+
+    document.addEventListener('DOMContentLoaded', () => {
+      initHeader();
+      initHeroSection();
+      initOurMenuSection('menuContainer');
+      initOurStorySection('storyContainer');
+      initGallerySection('galleryContainer');
+    });
+  </script>
+</body>
+</html>
